@@ -1,0 +1,119 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>동해도시철도주식회사</title>
+<style>
+:root{--bg:#f3f5f8;--card:#fff;--tx:#1b2430;--mu:#667085;--pr:#1e4fa3;--ac:#2e9e5b;--bd:#dde3ea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#10161e;--card:#1a222d;--tx:#e8edf3;--mu:#9aa6b5;--pr:#5b8fe0;--bd:#2c3846}}
+:root[data-theme=dark]{--bg:#10161e;--card:#1a222d;--tx:#e8edf3;--mu:#9aa6b5;--pr:#5b8fe0;--bd:#2c3846}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 "Noto Sans KR",system-ui,sans-serif}
+a{color:inherit;text-decoration:none;cursor:pointer}
+header{background:var(--card);border-bottom:1px solid var(--bd);position:sticky;top:env(safe-area-inset-top,0px);z-index:9}
+.hd{max-width:1100px;margin:auto;display:flex;align-items:center;gap:8px;padding:6px 16px}
+.hd img{height:48px}
+nav{display:flex;flex:1;justify-content:flex-end;flex-wrap:wrap}
+nav>div{position:relative}nav>div>a{display:block;padding:14px 12px;font-weight:700}
+nav>div:hover>a{background:var(--pr);color:#fff}
+.dd{display:none;position:absolute;right:0;top:100%;background:var(--card);border:1px solid var(--bd);box-shadow:0 8px 20px #0003;padding:8px;min-width:200px;max-height:70vh;overflow:auto}
+nav>div:hover .dd{display:block}
+.dd b{display:block;background:var(--bg);padding:4px 8px;margin-top:6px;font-size:13px}
+.dd a{display:block;padding:3px 8px;color:var(--mu);font-size:13px}.dd a:hover{color:var(--pr)}
+main{max-width:1100px;margin:auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:16px;margin-bottom:16px}
+.g{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.ban{position:relative;height:220px;border-radius:10px;overflow:hidden;background:linear-gradient(120deg,var(--pr),var(--ac));color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;margin-bottom:16px}
+.ban img{width:100%;height:100%;object-fit:cover}.ban h2{margin:0}
+.ban button{position:absolute;top:50%;background:#0006;color:#fff;border:0;font-size:22px;padding:6px 12px;cursor:pointer}
+.ib{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.ib a,.ql a{border:1px solid var(--bd);border-radius:8px;padding:12px;text-align:center}.ql a{display:block;text-align:left;margin-bottom:8px}
+.ib a:hover,.ql a:hover{border-color:var(--pr);color:var(--pr)}
+input,select,textarea{width:100%;padding:9px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--tx);font:inherit;margin:4px 0 10px}
+.btn{background:var(--pr);color:#fff;border:0;border-radius:6px;padding:10px 18px;font:inherit;font-weight:700;cursor:pointer}
+.btn.s{background:var(--bg);color:var(--tx);border:1px solid var(--bd)}
+label.r{display:block;padding:3px 0}label.r input{width:auto;margin:0 8px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px 0;align-items:center;margin:8px 0 18px}
+.chip{border:2px solid;border-radius:20px;padding:2px 10px;font-size:13px;background:var(--card)}.bar{width:14px;height:4px}
+.tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;color:#fff;background:var(--mu)}.tag.ok{background:var(--ac)}
+table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid var(--bd);text-align:left;font-size:14px}
+footer{background:#3b4452;color:#cfd6df;padding:20px 16px;font-size:13px}footer div{max-width:1100px;margin:auto}footer a{margin-right:14px;color:#fff}
+.err{color:#d92d20}.mu{color:var(--mu)}.wrap{overflow-x:auto}
+</style></head><body>
+<header><div class="hd"><a href="#/"><img src="logo.png" alt="동해도시철도"></a><nav id="nav"></nav></div></header>
+<main id="m"></main>
+<footer><div><a href="#/p/개인정보처리방침">개인정보처리방침</a><a href="#/p/여객운송약관">여객운송약관</a><a href="#/p/찾아오시는 길">찾아오시는 길</a><a href="#/admin">관리자</a><p>동해도시철도주식회사 DONGHAE TRANSIT RAILWAY · Copyright DTR. All rights reserved.</p></div></footer>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MENU={'이용정보':{'사이버스테이션':['사이버스테이션'],'실시간열차운행정보':['실시간열차운행정보','열차서행정보(선로공사)'],'간편지연증명서':['간편지연증명서'],'운임제도':['운임안내','승차권안내','단체권운임안내','여객운송약관'],'이용고객 편의시설':['배려시설 현황','승강설비 가동현황','휠체어 이용 승·하차 안내','무인편의기기','문화공간','환승주차장','자전거 보관함','수유실','동해역 환승센터'],'역시설물 임시폐쇄 공사현황':['역시설물 임시폐쇄 공사현황'],'유실물센터':['이용안내','유실물센터']},
+'안전환경':{'안전':['안전경영','사고·재난 대응'],'환경':['환경경영']},
+'시민 참여':{'민원':['민원접수','민원조회'],'소통':['고객의 소리','자주묻는 질문']},
+'알림마당':{'알림':['공지사항','보도자료','사규 제·개정 및 폐기 예고']},
+'정보공개':{'정보공개':['사업보고서','관련 법령 및 사규']},'ESG경영':{'ESG':['ESG경영']},
+'공사 소개':{'회사':['회사소개','연혁','CI 소개','찾아오시는 길']}};
+const LINES=[{n:'본선',c:'#1e4fa3',s:'망상,대진,목호,발한,부곡,동호시장,천곡시청,동해터미널,평릉,동해역,동해송정,효가,북평,북평산단'.split(',')},{n:'1지선',c:'#2e9e5b',s:'동해역,천곡남부,한섬,감추,해안'.split(',')},{n:'2지선',c:'#e08a1e',s:'북평,북삼,이도,단봉,삼화'.split(',')}];
+const TYPES='근무시간·근무편성,회식·사내행사,채용·입사·퇴사,급여·수당·복리후생,사내규정·공지사항,시설·근무환경,상사·동료 간 갈등,연차·휴가·휴무,업무분장·인사발령,열차 운행·운행 서비스,역 시설·승객 편의,안전관리·사고 관련,고객 응대·서비스 불편,사내 전산·업무 시스템,기타 건의사항,단순 문의·궁금증'.split(',');
+const WAYS=['다른 임직원들의 의견도 확인하고 싶음','유사한 사례가 있는지 확인하고 싶음','사내 검토 및 개선 건의가 이루어지길 희망함','담당 부서에서 내용을 확인해 주길 희망함','공식적인 기록으로 남기고 싶음','관련 규정 및 처리 기준을 안내받고 싶음','별도의 조치 없이 의견 전달만 희망함','외부 이용객 관련 불편사항의 확인 및 개선을 희망함','기타'];
+let db=null,usr=null,admin=null,banners=[],bi=0;
+const API='https://script.google.com/macros/s/AKfycbx8167fJwMGVsCW22loo7hkjiTOF3gr4Hk0PhZVTzTASWTRdklB-X-lD9raI4tw_sgnQA/exec';let AUTH=null;
+async function rpc(o){const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({auth:AUTH,...o})});const j=await r.json();if(j.error)throw new Error(j.error);return j.data}
+const snap=(id,d)=>({id,exists:!!d,data:()=>d});
+const mkq=(col,o={})=>({orderBy:(f,d)=>mkq(col,{...o,ob:f,d}),limit:n=>mkq(col,{...o,n}),get:async()=>{let l=await rpc({op:'list',col});if(o.ob)l.sort((a,b)=>(a[o.ob]-b[o.ob])*(o.d=='desc'?-1:1));if(o.n)l=l.slice(0,o.n);return{docs:l.map(x=>snap(x.id,x))}},add:d=>rpc({op:'set',col,id:'n'+Date.now(),data:d})});
+db={doc:p=>{const[col,id]=p.split('/');return{get:async()=>snap(id,await rpc({op:'get',col,id})),set:data=>rpc({op:'set',col,id,data}),update:data=>rpc({op:'update',col,id,data}),delete:()=>rpc({op:'delete',col,id})}},collection:c=>mkq(c)};usr={canEdit:async()=>true};
+(async()=>{try{const b=await db.doc('site/banners').get();banners=b.exists&&b.data().ids?String(b.data().ids).split(','):[]}catch(e){}route()})();
+$('#nav').innerHTML=Object.entries(MENU).map(([k,v])=>`<div><a href="#/p/${k}">${k}</a><div class="dd">${Object.entries(v).map(([h,l])=>`<b>${h}</b>${l.map(x=>`<a href="${x=='민원접수'?'#/complaint':x=='민원조회'?'#/lookup':'#/p/'+x}">${x}</a>`).join('')}`).join('')}</div></div>`).join('');
+const graph={};LINES.forEach(l=>l.s.forEach((s,i)=>{graph[s]??=new Set();if(i)graph[s].add(l.s[i-1]),(graph[l.s[i-1]]??=new Set()).add(s)}));
+const ALL=Object.keys(graph);
+function bfs(a,b){const q=[[a]],seen=new Set([a]);while(q.length){const p=q.shift(),c=p[p.length-1];if(c==b)return p;for(const n of graph[c]||[])if(!seen.has(n)){seen.add(n);q.push([...p,n])}}}
+function home(){const q=['간편지연증명서','실시간열차운행정보','유실물 찾기','운임안내','교통약자 배려시설','이용고객 편의시설','승강설비 가동현황'];
+ $('#m').innerHTML=`<div class="ban" id="ban"></div><div class="g"><div class="card"><b>경로찾기</b><datalist id="st">${ALL.map(s=>`<option value="${s}">`).join('')}</datalist><input id="a" list="st" placeholder="출발역"><input id="b" list="st" placeholder="도착역"><button class="btn" onclick="find()">경로찾기</button><div id="rs"></div><div class="ib"><a href="#/map">노선도</a><a href="#/p/열차시각표">열차시각표</a><a href="#/p/주변지역안내">주변지역안내</a><a href="#/p/역이용안내">역이용안내</a></div></div><div class="card ql">${q.map(x=>`<a href="#/p/${x}">${x}</a>`).join('')}</div><div class="card"><b>공지사항</b><div id="rn" class="mu" style="margin-top:8px">불러오는 중…</div></div><div class="card"><b>민원·소통</b><div class="ib"><a href="#/complaint">민원접수</a><a href="#/lookup">민원조회</a><a href="#/p/고객의 소리">고객의 소리</a><a href="#/p/자주묻는 질문">자주묻는 질문</a></div></div></div>`;drawBan();recent()}
+function drawBan(){const e=$('#ban');if(!e)return;if(!banners.length){e.innerHTML='<h2>안전한 도시철도, 편리한 교통 서비스<br><small>동해도시철도가 동해시 교통의 미래를 만들어 갑니다</small></h2>';return}
+ e.innerHTML=`<img src="${banners[bi%banners.length]}" alt="배너">${banners.length>1?'<button style="left:0" onclick="bi--;if(bi<0)bi=banners.length-1;drawBan()">‹</button><button style="right:0" onclick="bi++;drawBan()">›</button>':''}`}
+setInterval(()=>{if(banners.length>1&&$('#ban')){bi++;drawBan()}},6000);
+function find(){const a=$('#a').value,b=$('#b').value,p=ALL.includes(a)&&ALL.includes(b)&&bfs(a,b);$('#rs').innerHTML=p?`<p><b>${p.length-1}개 역 · 약 ${(p.length-1)*2+2}분</b><br class="mu">${p.join(' → ')}</p>`:'<p class="err">역 이름을 목록에서 선택해 주세요.</p>'}
+function map(){$('#m').innerHTML='<div class="card"><h2>노선도</h2>'+LINES.map(l=>`<b style="color:${l.c}">${l.n}</b><div class="chips">${l.s.map((s,i)=>(i?`<span class="bar" style="background:${l.c}"></span>`:'')+`<span class="chip" style="border-color:${l.c}">${s}</span>`).join('')}</div>`).join('')+'<p class="mu">환승: 동해역(본선↔1지선), 북평(본선↔2지선)</p></div>'}
+function page(t){const sub=Object.values(MENU[t]||{}).flat();$('#m').innerHTML=`<div class="card"><h2>${esc(t)}</h2>${sub.length?sub.map(x=>`<p><a href="${x=='민원접수'?'#/complaint':x=='민원조회'?'#/lookup':'#/p/'+x}">▸ ${x}</a></p>`).join(''):'<p class="mu">이 페이지의 내용은 준비 중입니다.</p>'}</div>`}
+function complaint(){$('#m').innerHTML=`<div class="card"><h2>민원 접수</h2>${db?'':'<p class="err">현재 접수 기능을 사용할 수 없습니다. 로그인 후 다시 시도해 주세요.</p>'}
+<label>민원 유형 *<select id="t"><option value="">선택</option>${TYPES.map(x=>`<option>${x}</option>`).join('')}</select></label>
+<label>성함 (선택)<input id="nm"></label><label>연락처 / 이메일 (선택, 답변은 접수번호로 조회)<input id="ct"></label>
+<label>제목 *<input id="ti"></label>
+<label>2-2. 민원 내용 * <span class="mu">※사진 및 영상 증거물은 DM으로 보내주십시오.</span><textarea id="co" rows="6"></textarea></label>
+<p><b>3-1. 희망하는 처리 방식 *</b><br class="mu">본 건에 대해 가장 원하는 처리 방향을 선택하여 주십시오.</p>${WAYS.map(w=>`<label class="r"><input type="radio" name="w" value="${w}">${w}</label>`).join('')}
+<p><b>4-1. 안내 *</b><br>본 민원을 동해도시철도 관련 업무에 활용하는 것에 동의합니다.</p>
+<label class="r"><input type="radio" name="ag" value="동의합니다">동의합니다</label><label class="r"><input type="radio" name="ag" value="아니오 단순 접수만 희망합니다">아니오 단순 접수만 희망합니다</label>
+<p id="msg" class="err"></p><button class="btn" onclick="submitC()">접수하기</button></div>`}
+async function submitC(){const v=id=>$('#'+id).value.trim(),r=n=>(document.querySelector(`input[name=${n}]:checked`)||{}).value;
+ const d={type:v('t'),name:v('nm'),contact:v('ct'),title:v('ti'),content:v('co'),way:r('w'),agree:r('ag')};
+ if(!d.type||!d.title||!d.content||!d.way||!d.agree){$('#msg').textContent='* 표시 항목을 모두 입력해 주세요.';return}
+ if(!db){$('#msg').textContent='접수 기능을 사용할 수 없습니다.';return}
+ const n=new Date(),code='DTR-'+String(n.getFullYear()).slice(2)+String(n.getMonth()+1).padStart(2,'0')+String(n.getDate()).padStart(2,'0')+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
+ try{await db.doc('complaints/'+code).set({...d,code,status:'접수',answer:'',createdAt:Date.now()});$('#m').innerHTML=`<div class="card"><h2>접수가 완료되었습니다</h2><p>접수번호</p><h1 style="color:var(--pr)">${code}</h1><p>이 번호로 <a href="#/lookup"><u>민원조회</u></a>에서 처리 상태와 답변을 확인할 수 있습니다. 꼭 보관해 주세요.</p></div>`}catch(e){$('#msg').textContent='접수에 실패했습니다. 잠시 후 다시 시도해 주세요.'}}
+function lookup(){$('#m').innerHTML=`<div class="card"><h2>민원 조회</h2><input id="lc" placeholder="접수번호 (예: DTR-261011-AB12)"><button class="btn" onclick="doLookup()">조회</button><div id="lr"></div></div>`}
+function view(d){return `<table><tr><th>접수번호</th><td>${esc(d.code)}</td></tr><tr><th>상태</th><td><span class="tag ${d.answer?'ok':''}">${d.answer?'답변완료':'답변 대기'}</span></td></tr><tr><th>유형</th><td>${esc(d.type)}</td></tr><tr><th>제목</th><td>${esc(d.title)}</td></tr><tr><th>내용</th><td style="white-space:pre-wrap">${esc(d.content)}</td></tr><tr><th>희망 처리</th><td>${esc(d.way)}</td></tr><tr><th>답변</th><td style="white-space:pre-wrap">${d.answer?esc(d.answer):'<span class="mu">아직 답변이 등록되지 않았습니다.</span>'}</td></tr></table>`}
+async function doLookup(){const c=$('#lc').value.trim().toUpperCase();if(!db)return $('#lr').innerHTML='<p class="err">조회 기능을 사용할 수 없습니다.</p>';
+ try{const s=await db.doc('complaints/'+c).get();$('#lr').innerHTML=s.exists?view(s.data()):'<p class="err">해당 접수번호를 찾을 수 없습니다.</p>'}catch(e){$('#lr').innerHTML='<p class="err">조회에 실패했습니다.</p>'}}
+async function sha(s){return [...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('')}
+function adminLogin(){$('#m').innerHTML=`<div class="card" style="max-width:380px"><h2>관리자 로그인</h2><input id="ai" placeholder="아이디"><input id="ap" type="password" placeholder="비밀번호"><p id="msg" class="err"></p><button class="btn" onclick="login()">로그인</button> <button class="btn s" onclick="regFirst()">최초 관리자 등록</button><p class="mu">최초 등록에는 Code.gs의 설정 키가 필요합니다.</p></div>`}
+async function login(){const i=$('#ai').value.trim();try{const h=await sha($('#ap').value);await rpc({op:'login',auth:{u:i,h}});AUTH={u:i,h};admin=i;panel()}catch(e){$('#msg').textContent='아이디 또는 비밀번호가 올바르지 않습니다.'}}
+async function regFirst(){const i=$('#ai').value.trim(),p=$('#ap').value;if(!i||p.length<6)return $('#msg').textContent='아이디와 6자 이상 비밀번호를 입력하세요.';const k=prompt('Code.gs의 SETUP_KEY를 입력하세요');try{const h=await sha(p);await rpc({op:'bootstrap',key:k,id:i,h});AUTH={u:i,h};admin=i;panel()}catch(e){$('#msg').textContent='등록 실패: 키가 틀렸거나 이미 관리자가 있습니다.'}}
+async function panel(){let list=[];try{list=(await db.collection('complaints').orderBy('createdAt','desc').get()).docs.map(x=>x.data())}catch(e){}
+ const canEd=usr&&await usr.canEdit();
+ $('#m').innerHTML=`<div class="card"><h2>관리자 · ${esc(admin)} <button class="btn s" onclick="admin=null;adminLogin()">로그아웃</button></h2><p>총 ${list.length}건 · 답변 대기 ${list.filter(x=>!x.answer).length}건 <button class="btn s" onclick="csv()">CSV 내보내기(구글 시트용)</button></p><div class="wrap"><table><tr><th>번호</th><th>유형</th><th>제목</th><th>상태</th></tr>${list.map(x=>`<tr><td><a onclick="open1('${x.code}')"><u>${x.code}</u></a></td><td>${esc(x.type)}</td><td>${esc(x.title)}</td><td><span class="tag ${x.answer?'ok':''}">${x.answer?'답변완료':'대기'}</span></td></tr>`).join('')}</table></div><div id="dt"></div></div>
+ <div class="card"><b>공지사항·보도자료 작성</b><select id="nc"><option>공지사항</option><option>보도자료</option></select><input id="nt" placeholder="제목"><textarea id="nb" rows="6" placeholder="내용"></textarea><button class="btn" onclick="postN()">등록</button> <span id="nm2"></span></div>
+ <div class="card"><b>관리자 추가</b><input id="ni" placeholder="새 아이디"><input id="np" type="password" placeholder="비밀번호 6자 이상"><button class="btn" onclick="addAdm()">추가</button> <span id="am"></span></div>
+ ${canEd?'<div class="card"><b>메인 배너 관리</b><input id="bu" placeholder="이미지 경로 (예: banners/b1.jpg)"><button class="btn" onclick="addBan()">배너 추가</button><div id="bl">'+banners.map((x,i)=>`<p><img src="${x}" height="40"> <a onclick="delBan(${i})" class="err">삭제</a></p>`).join('')+'</div></div>':''}`;window._l=list}
+async function open1(c){const x=window._l.find(y=>y.code==c);$('#dt').innerHTML=view(x)+`<textarea id="an" rows="5" placeholder="답변 입력">${esc(x.answer)}</textarea><button class="btn" onclick="ans('${c}')">답변 저장</button>`}
+async function ans(c){await db.doc('complaints/'+c).update({answer:$('#an').value,status:'답변완료',answeredBy:admin,answeredAt:Date.now()});panel()}
+async function addAdm(){const i=$('#ni').value.trim(),p=$('#np').value;if(!i||p.length<6)return $('#am').textContent='입력 확인';await db.doc('admins/'+i).set({h:await sha(p)});$('#am').textContent='추가됨'}
+async function addBan(){const u=$('#bu').value.trim();if(!u)return;banners=[...banners,u];await db.doc('site/banners').set({ids:banners.join(',')});panel()}
+async function delBan(i){banners.splice(i,1);await db.doc('site/banners').set({ids:banners.join(',')});panel()}
+async function csv(){const q=s=>'"'+String(s??'').replace(/"/g,'""')+'"',h=['code','createdAt','type','name','contact','title','content','way','agree','answer'];
+ const rows=[h.join(',')].concat(window._l.map(x=>h.map(k=>q(k=='createdAt'?new Date(x[k]).toLocaleString('ko-KR'):x[k])).join(',')));
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+rows.join('\n')],{type:'text/csv'}));a.download='민원목록.csv';a.click()}
+async function board(cat){if(!db)return $('#m').innerHTML='<div class="card"><h2>'+cat+'</h2><p class="err">불러올 수 없습니다.</p></div>';
+ let l=[];try{l=(await db.collection('notices').orderBy('createdAt','desc').get()).docs.map(x=>({id:x.id,...x.data()})).filter(x=>x.cat==cat)}catch(e){}
+ window._n=l;$('#m').innerHTML=`<div class="card"><h2>${cat}</h2>${l.length?`<table>${l.map(x=>`<tr><td><a onclick="nview('${x.id}')"><u>${esc(x.title)}</u></a></td><td class="mu">${new Date(x.createdAt).toLocaleDateString('ko-KR')}</td></tr>`).join('')}</table>`:'<p class="mu">등록된 글이 없습니다.</p>'}<div id="nd"></div></div>`}
+function nview(id){const x=window._n.find(y=>y.id==id);$('#nd').innerHTML=`<hr><h3>${esc(x.title)}</h3><p style="white-space:pre-wrap">${esc(x.body)}</p>${admin?`<button class="btn s" onclick="ndel('${id}','${x.cat}')">삭제</button>`:''}`}
+async function ndel(id,c){if(!confirm('삭제할까요?'))return;await db.doc('notices/'+id).delete();board(c)}
+async function postN(){const t=$('#nt').value.trim(),b=$('#nb').value.trim();if(!t||!b)return $('#nm2').textContent='제목과 내용을 입력하세요.';try{await db.collection('notices').add({cat:$('#nc').value,title:t,body:b,author:admin,createdAt:Date.now()});$('#nm2').textContent='등록되었습니다.';$('#nt').value=$('#nb').value=''}catch(e){$('#nm2').textContent='등록 실패'}}
+async function recent(){const e=$('#rn');if(!e||!db)return;try{const l=(await db.collection('notices').orderBy('createdAt','desc').limit(30).get()).docs.map(x=>x.data()).filter(x=>x.cat=='공지사항').slice(0,5);e.innerHTML=l.length?l.map(x=>`<a href="#/p/공지사항" style="display:block">▸ ${esc(x.title)}</a>`).join(''):'등록된 공지가 없습니다.'}catch(x){}}
+function route(){const h=decodeURIComponent(location.hash||'#/');window.scrollTo(0,0);
+ if(h=='#/'||h=='')home();else if(h=='#/map')map();else if(h=='#/complaint')complaint();else if(h=='#/lookup')lookup();else if(h=='#/admin')admin&&db?panel():adminLogin();else if(h.startsWith('#/p/')){const t=h.slice(4);t=='노선도'?map():t=='민원접수'?complaint():t=='민원조회'?lookup():(t=='공지사항'||t=='보도자료')?board(t):page(t)}else home()}
+addEventListener('hashchange',route);route();
+</script></body></html>
